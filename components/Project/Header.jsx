@@ -72,12 +72,12 @@ const Header = ({ data }) => {
                         </div>
                     </div>
                     <div className='space-x-6'>
-                        <a href={data.link} target="_blank">
+                        <a href={data.link} target="_blank" rel="noreferrer">
                             <button className={`${style.button}`}>
                                 Live Site
                             </button>
                         </a>
-                        <a href={data.github} target="_blank">
+                        <a href={data.github} target="_blank" rel="noreferrer">
                             <button className={`${style.button} border-white text-secondary`}>
                                 Github Code
                             </button>

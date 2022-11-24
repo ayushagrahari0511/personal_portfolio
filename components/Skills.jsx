@@ -20,7 +20,7 @@ const Skills = () => {
                 <div className='flex flex-wrap justify-start items-start gap-5 max-w-[35rem]'>
                     {
                         skills.map((icon, i) => (
-                            <Icon path={icon.path} />
+                            <Icon path={icon.path} key={i} />
                         ))
                     }
                 </div>

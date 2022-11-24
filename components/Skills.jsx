@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { skills } from '../skills'
 import { style } from '../style'
-import Icon from './icon'
+import Icon from './Icon'
 
 const Skills = () => {
     return (

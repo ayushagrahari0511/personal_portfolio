@@ -1,7 +1,7 @@
 import React from 'react'
 import { style } from '../../style'
 import Image from 'next/image'
-import Icon from '../icon'
+import Icon from '../Icon'
 import Link from 'next/link'
 
 const Header = ({ data }) => {

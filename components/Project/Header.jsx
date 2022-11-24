@@ -73,7 +73,7 @@ const Header = ({ data }) => {
                     </div>
                     <div className='space-x-6'>
                         <a href={data.link} target="_blank" rel="noreferrer">
-                            <button className={`${style.button}`}>
+                            <button className={`${style.button} text-[1.6rem] text-white border-2 border-secondary px-5 py-2 rounded-md hover:bg-[rgba(61,61,61,0.5)] duration-100`}>
                                 Live Site
                             </button>
                         </a>

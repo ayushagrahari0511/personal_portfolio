@@ -43,10 +43,24 @@ export const project = [
         github: "https://github.com/ayushagrahari0511/Hoobank.git"
     },
     {
+        title: "Mint",
+        path: "/mint.png",
+        link: "https://live-mint.netlify.app/",
+        subTitle: "First Client's Project",
+        about: [
+            "To connect everyone with latest news.",
+            "Global news available 24*7",
+        ],
+        tech: [
+            "/html.png", "/css.png", "/react.png", "/next.png", "/git.png"
+        ],
+        github: ""
+    },
+    {
         title: "Hustle",
         path: "/hustle.png",
         link: "https://hustle-ayush.vercel.app/",
-        subTitle: "First Client's Project",
+        subTitle: "Second Client's Project",
         about: [
             "To connect freelancers with their clients globally",
             "Freelancers can find best clients..",

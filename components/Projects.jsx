@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import "swiper/css"
 import "swiper/css/pagination"
-import Image from 'next/image'
 import { Pagination, Autoplay } from 'swiper'
+import Image from 'next/image'
 import { project } from '../projects'
 import Link from 'next/link'
 
@@ -58,10 +58,10 @@ const Projects = () => {
                     {
                         project.map((project, i) => (
                             <SwiperSlide key={i} className={style.flexCenter}>
-                                <div className='w-[30rem] h-[18rem] rounded-xl overflow-hidden'>
+                                <div className='w-[30rem] h-[18rem] mb-[4rem] rounded-xl overflow-hidden'>
                                     <Link href={`/project/${project.title}`}>
                                         <div className='w-[30rem] h-[18rem] relative'>
-                                            <Image src={project.path} layout="fill" />
+                                            <Image src={project.path} className="w-[30rem] h-[18rem]" fill />
                                         </div>
                                     </Link>
                                 </div>

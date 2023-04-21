@@ -40,7 +40,19 @@ export const skills = [
         path: "/docker.png"
     },
     {
+        title: "nginx",
+        path: "/nginx.svg"
+    },
+    {
         title: "git",
         path: "/git.png"
+    },
+    {
+        title: "postgres",
+        path: "/postgres.svg"
+    },
+    {
+        title: "mongodb",
+        path: "/mongodb.png"
     }
 ]

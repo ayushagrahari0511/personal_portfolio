@@ -22,7 +22,7 @@ const Hero = () => {
                 {/* Subheading with profile */}
                 <div className="mt-14 flex flex-col items-center gap-4">
                     <div className="flex items-center gap-4 text-3xl md:text-2xl text-gray-300">
-                        Hello, I'm Ayush
+                        Hello, I&apos;m Ayush
                         <span className="inline-block w-14 h-14 rounded-full overflow-hidden border-2 border-secondary align-middle">
                             <Image src="/dev.png" alt="profile" width={56} height={56} />
                         </span>
@@ -33,7 +33,7 @@ const Hero = () => {
                 {/* CTA and Email */}
                 <div className="mt-14 flex flex-col sm:flex-row items-center gap-8">
                     <a href="#contact" className="flex items-center gap-2 px-10 py-5 bg-secondary text-black text-2xl font-semibold rounded-full shadow-lg hover:scale-105 transition-transform">
-                        Let's Connect
+                        Let&apos;s Connect
                         <span className="inline-block text-3xl">→</span>
                     </a>
                     <div className="flex items-center gap-2 text-gray-300 text-xl">

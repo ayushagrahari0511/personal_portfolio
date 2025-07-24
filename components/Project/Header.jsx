@@ -77,11 +77,13 @@ const Header = ({ data }) => {
                                 Live Site
                             </button>
                         </a>
-                        <a href={data.github} target="_blank" rel="noreferrer">
-                            <button className={`${style.button} border-white text-secondary`}>
-                                Github Code
-                            </button>
-                        </a>
+                        {data.github &&
+                            <a href={data.github} target="_blank" rel="noreferrer">
+                                <button className={`${style.button} border-white text-secondary`}>
+                                    Github Code
+                                </button>
+                            </a>
+                        }
                     </div>
                 </div>
             </div>

@@ -8,7 +8,6 @@ const Project = () => {
     const router = useRouter();
     const data = project.find((element, i) => element.title === router.query.project)
 
-    console.log(data)
     return (
         <>
             <div className='bg-primary text-white'>

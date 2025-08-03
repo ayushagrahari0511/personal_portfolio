@@ -11,27 +11,29 @@ const Hero = () => {
             {/* Main Content */}
             <div className="relative z-10 flex flex-col items-center w-full px-4">
                 {/* Optional badge */}
-               
+
 
                 {/* Headline - force 2 lines only */}
-                <h1 className="text-white text-center font-semibold text-7xl lg:text-7xl md:text-6xl sm:text-4xl leading-tight whitespace-pre-line break-words">
-                    I help founders turn ideas <br /> into seamless
-                    <span className="italic font-serif text-secondary text-7xl lg:text-7xl md:text-7xl sm:text-5xl"> digital experiences</span>
+                <h1 className="text-white text-center max-w-[600px] ss:max-w-[90%] font-semibold text-7xl lg:text-7xl md:text-6xl ss:text-4xl leading-tight whitespace-pre-line break-words">
+                    I help founders turn ideas <br className="ss:hidden" /> into seamless
+                    <span className="italic font-serif text-secondary text-7xl lg:text-7xl md:text-7xl ss:text-5xl"> digital experiences</span>
                 </h1>
 
                 {/* Subheading with profile */}
                 <div className="mt-14 flex flex-col items-center gap-4">
-                    <div className="flex items-center gap-4 text-3xl md:text-2xl text-gray-300">
-                        Hello, I&apos;m Ayush
-                        <span className="inline-block w-14 h-14 rounded-full overflow-hidden border-2 border-secondary align-middle">
-                            <Image src="/dev.png" alt="profile" width={56} height={56} />
-                        </span>
+                    <div className="flex items-center gap-4 ss:gap-0 text-3xl md:text-2xl ss:flex-col text-gray-300">
+                        <div className="flex gap-4 items-center">
+                            Hello, I&apos;m Ayush {""}
+                            <span className="inline-block w-15 h-15 ss:w-[80px] flex items-center justify-center rounded-full overflow-hidden border-2 ss:border-1 border-secondary align-middle">
+                                <img src="/dev3.png" alt="profile" className="w-[50px] ss:w-[40px] h-[50px] ss:h-[40px]" />
+                            </span>
+                        </div>
                         a Full Stack Developer
                     </div>
                 </div>
 
                 {/* CTA and Email */}
-                <div className="mt-14 flex flex-col sm:flex-row items-center gap-8">
+                <div className="mt-14 flex flex-col items-center gap-8">
                     <a href="#contact" className="flex items-center gap-2 px-10 py-5 bg-secondary text-black text-2xl font-semibold rounded-full shadow-lg hover:scale-105 transition-transform">
                         Let&apos;s Connect
                         <span className="inline-block text-3xl">→</span>

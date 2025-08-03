@@ -6,6 +6,7 @@ import Skills from '../components/Skills'
 import Projects from '../components/Projects'
 import Footer from '../components/Footer'
 import Achievements from '../components/Achievements'
+import Project2 from '../components/Project2'
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <Hero />
         <Skills />
         <Projects />
+        {/* <Project2 /> */}
 
         
         {/* <Achievements /> */}

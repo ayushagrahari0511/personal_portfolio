@@ -46,20 +46,18 @@ a {
 
     0%,
     100% {
-        background-size: 200% 200%;
-        background-position: left center;
+        background-position: 0;
     }
 
     50% {
-        background-size: 200% 200%;
-        background-position: right center;
+        background-position: 100%;
     }
 }
 
 .animate-gradient-x {
-    animation: gradient-x 3s ease infinite;
-    background: linear-gradient(-45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3, #54a0ff);
-    background-size: 400% 400%;
+    animation: gradient-x 6s infinite;
+    background: linear-gradient(288deg, #ff8000, #f0c 53.2394%, #04f);
+    background-size: 200% 200%;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

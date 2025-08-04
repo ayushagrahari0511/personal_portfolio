@@ -21,10 +21,6 @@ export default function Home() {
         <Hero />
         <Skills />
         <Projects />
-        {/* <Project2 /> */}
-
-        
-        {/* <Achievements /> */}
         <Footer />
       </main>
     </div>

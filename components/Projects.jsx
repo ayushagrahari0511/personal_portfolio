@@ -20,9 +20,9 @@ const Projects = () => {
 
     return (isSSR &&
         <div className={`${style.flexCenter} flex-col w-[75%] sm:w-[95%] m-auto min-h-[90vh] space-y-5`}>
-            <h3 className='text-[4rem] font-bold font-serif text-white !mb-10 text-center'>
+            <h3 className='text-[4rem] font-bold text-white !mb-10 text-center'>
                 Curated {""}
-                <span className="bg-gradient-to-r italic from-pink-500 via-purple-500 to-cyan-500 bg-clip-text text-transparent animate-pulse bg-300% animate-gradient-x">
+                <span className="bg-gradient-to-r font-serif italic from-[#ff8000] via-[#f0c] to-[#04f] bg-clip-text text-transparent animate-pulse bg-300% animate-gradient-x">
                     Work
                 </span>
             </h3>

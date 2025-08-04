@@ -6,21 +6,29 @@ import Icon from './Icon'
 
 const Skills = () => {
     return (
-        <div className='w-full h-screen'>
-            <div className='w-[75%] flex justify-between items-center h-screen
-             m-auto md:flex-col md:w-[85%] md:justify-center md:items-start md:space-y-24 xs:w-[95%]' >
-                <div className='space-y-6'>
+        <div className='w-full'>
+            <div className='w-[75%] flex flex-col justify-center items-center min-h-[90vh]
+             m-auto md:w-[85%] xs:w-[95%]' >
+                <div className='space-y-4 flex flex-col items-center'>
                     <h5 className='text-[2rem] text-white'>
-                        Technology <span className='text-secondary'>Stack</span>
+                        MY SKILLS
                     </h5>
-                    <h2 className='text-[3.6rem] text-white w-[39rem] md:w-[80%] xs:!w-full xs:text-[3rem]'>
-                        A list of familiar technology stack in web development
-                    </h2>
+                    <h3 className='text-[4rem] font-semibold  text-white !mb-10 text-center'>
+                        The Secret {""}
+                        <span className="bg-gradient-to-r font-serif italic from-pink-500 via-purple-500 to-cyan-500 bg-clip-text text-transparent animate-pulse bg-300% animate-gradient-x">
+                            Sauce
+                        </span>
+                    </h3>
                 </div>
-                <div className='flex flex-wrap justify-start items-start gap-5 max-w-[35rem]'>
+                <div className='flex flex-wrap justify-center items-start gap-5 max-w-[85rem]'>
                     {
                         skills.map((icon, i) => (
-                            <Icon path={icon.path} key={i} />
+                            <div className='text-white flex items-center justify-center gap-2 rounded-[6px] bg-[#171717] border-[1px] border-[#424242] pt-[5px] pb-[5px] pl-[15px] pr-[15px] '>
+                                <div className='w-[20px] h-[20px] relative'>
+                                    <Image src={icon.path} fill />
+                                </div>
+                                <p className='text-[14px]'>{icon.name}</p>
+                            </div>
                         ))
                     }
                 </div>

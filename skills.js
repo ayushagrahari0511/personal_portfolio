@@ -1,58 +1,92 @@
 export const skills = [
     {
         title: "html",
-        path: "/html.png"
+        path: "/html.png",
+        name: "Html"
     },
     {
         title: "css",
-        path: "/css.png"
+        path: "/css.png",
+        name: "Css"
     },
     {
         title: "javascript",
-        path: "/javascript.png"
+        path: "/javascript.png",
+        name: "Javascript"
     },
     {
         title: "tailwind",
-        path: "/tailwind.png"
+        path: "/tailwind.png",
+        name: "Tailwind CSS"
     },
     {
         title: "react",
-        path: "/react.png"
+        path: "/react.png",
+        name: "React JS"
     },
     {
         title: "next",
-        path: "/next.png"
+        path: "/next2.png",
+        name: "Next JS"
+    },
+    {
+        title: "typescript",
+        path: "/typescript.png",
+        name: "TypeScript"
+    },
+    {
+        title: "react native",
+        path: "/react.png",
+        name: "React Native"
+    },
+    {
+        title: "expo",
+        path: "/expo.png",
+        name: "Expo"
     },
     {
         title: "nodejs",
-        path: "/node.png"
+        path: "/node.png",
+        name: "Node JS"
     },
     {
         title: "expressjs",
-        path: "/expressjs.png"
+        path: "/expressjs.png",
+        name: "Express JS"
     },
     {
         title: "postman",
-        path: "/postman.png"
+        path: "/postman.png",
+        name: "Postman"
     },
     {
         title: "docker",
-        path: "/docker.png"
+        path: "/docker.png",
+        name: "Docker"
     },
     {
         title: "nginx",
-        path: "/nginx.svg"
+        path: "/nginx.svg",
+        name: "Nginx"
     },
     {
         title: "git",
-        path: "/git.png"
+        path: "/git.png",
+        name: "Git"
     },
     {
         title: "postgres",
-        path: "/postgres.svg"
+        path: "/postgres.svg",
+        name: "PostgreSQL"
     },
     {
         title: "mongodb",
-        path: "/mongodb.png"
+        path: "/mongodb.png",
+        name: "MongoDB"
+    },
+    {
+        title: "aws",
+        path: "/awsicon.png",
+        name: "AWS"
     }
 ]

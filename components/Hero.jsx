@@ -10,9 +10,6 @@ const Hero = () => {
 
             {/* Main Content */}
             <div className="relative z-10 flex flex-col items-center w-full px-4">
-                {/* Optional badge */}
-
-
                 {/* Headline - force 2 lines only */}
                 <h1 className="text-white text-center max-w-[600px] ss:max-w-[90%] font-semibold text-7xl lg:text-7xl md:text-6xl ss:text-4xl leading-tight whitespace-pre-line break-words">
                     I help founders turn ideas <br className="ss:hidden" /> into seamless

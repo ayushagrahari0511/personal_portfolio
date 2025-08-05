@@ -23,7 +23,7 @@ const Skills = () => {
                 <div className='flex flex-wrap justify-center items-start gap-5 max-w-[85rem]'>
                     {
                         skills.map((icon, i) => (
-                            <div className='text-white flex items-center justify-center gap-2 rounded-[6px] bg-[#171717] border-[1px] border-[#424242] pt-[5px] pb-[5px] pl-[15px] pr-[15px] ss:pl-[10px] ss:pr-[10px] '>
+                            <div key={i} className='text-white flex items-center justify-center gap-2 rounded-[6px] bg-[#171717] border-[1px] border-[#424242] pt-[5px] pb-[5px] pl-[15px] pr-[15px] ss:pl-[10px] ss:pr-[10px] '>
                                 <div className='w-[20px] h-[20px] relative'>
                                     <Image src={icon.path} fill />
                                 </div>

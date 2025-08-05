@@ -56,7 +56,7 @@ a {
 
 .animate-gradient-x {
     animation: gradient-x 6s infinite;
-    background: linear-gradient(288deg, #ff8000, #f0c 53.2394%, #04f);
+    background: linear-gradient(288deg, #FDC78D, #f0c 53.2394%, #04f);
     background-size: 200% 200%;
     background-clip: text;
     -webkit-background-clip: text;

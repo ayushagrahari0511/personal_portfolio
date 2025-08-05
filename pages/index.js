@@ -7,8 +7,12 @@ import Projects from '../components/Projects'
 import Footer from '../components/Footer'
 import Achievements from '../components/Achievements'
 import Project2 from '../components/Project2'
+import { useState } from 'react'
+import Connect from '../components/Connect'
 
 export default function Home() {
+
+  const [open, setIsOpen] = useState();
   return (
     <div>
       <Head>
@@ -18,10 +22,12 @@ export default function Home() {
       </Head>
 
       <main className='bg-primary text-[#fff] font-poppins'>
-        <Hero />
+        <Hero setIsOpen={setIsOpen} />
         <Skills />
         <Projects />
         <Footer />
+
+        <Connect isOpen={open} setIsOpen={setIsOpen} />
       </main>
     </div>
   )

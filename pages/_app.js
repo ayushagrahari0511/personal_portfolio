@@ -1,8 +1,10 @@
+import "@radix-ui/themes/styles.css";
 import '../styles/globals.css'
 import Script from 'next/script';
 import * as gtag from '../lib/gtag';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import { Theme } from "@radix-ui/themes";
 
 function MyApp({ Component, pageProps }) {
 
@@ -18,7 +20,7 @@ function MyApp({ Component, pageProps }) {
       router.events.off('routeChangeComplete', handleRouteChange);
     };
   }, [router.events]);
-  
+
   return (
     <>
       <Script
@@ -34,7 +36,10 @@ function MyApp({ Component, pageProps }) {
         gtag('js', new Date());
         gtag('config', '${gtag.GA_TRACKING_ID}');
       `}</Script>
-      <Component {...pageProps} />
+      <Theme>
+
+        <Component {...pageProps} />
+      </Theme>
     </>
   )
 }

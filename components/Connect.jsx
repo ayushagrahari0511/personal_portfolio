@@ -98,13 +98,13 @@ export default function Connect({ isOpen, setIsOpen }) {
 
                         {/* Social Icons */}
                         <div className="flex justify-center gap-6 mb-8">
-                            <a href="https://www.linkedin.com/in/ayushagrahari0511/" target='_blank' className="text-gray-400 hover:text-white transition-colors duration-200">
+                            <a href="https://www.linkedin.com/in/ayushagrahari0511/" target='_blank' rel="noreferrer" className="text-gray-400 hover:text-white transition-colors duration-200">
                                 <Linkedin size={20} />
                             </a>
-                            <a href="https://github.com/ayushagrahari0511" target='_blank' className="text-gray-400 hover:text-white transition-colors duration-200">
+                            <a href="https://github.com/ayushagrahari0511" target='_blank' rel="noreferrer" className="text-gray-400 hover:text-white transition-colors duration-200">
                                 <Github size={20} />
                             </a>
-                            <a href="https://x.com/ayush_dev0511" target='_blank' className="text-gray-400 hover:text-white transition-colors duration-200">
+                            <a href="https://x.com/ayush_dev0511" target='_blank' rel="noreferrer" className="text-gray-400 hover:text-white transition-colors duration-200">
                                 <Twitter size={20} />
                             </a>
                         </div>
@@ -150,7 +150,8 @@ export default function Connect({ isOpen, setIsOpen }) {
                                         {/* Phone Option */}
                                         <a href="https://wa.me/917800947067"
                                             target="_blank"
-                                            rel="noopener noreferrer" className="border border-[#323232] rounded-lg hover:bg-gray-750 transition-colors duration-200 cursor-pointer group">
+                                            rel="noreferrer"
+                                            className="border border-[#323232] rounded-lg hover:bg-gray-750 transition-colors duration-200 cursor-pointer group">
                                             <div className="flex items-center gap-3 mb-2 p-[15px] border-b border-b-[#323232] bg-gradient-to-r from-purple-900/20 to-transparent">
                                                 <div className="w-10 h-10 rounded-lg flex items-center justify-center">
                                                     <Phone size={20} className="text-purple-400" />

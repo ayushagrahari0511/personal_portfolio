@@ -36,7 +36,7 @@ const Projects = () => {
                                 <div className="flex justify-between items-start mb-4 ss:flex-col ss:mb-2 ss:pl-3 ss:pt-2">
                                     <div className="ss:mb-1">
                                         <h2 className="text-[32px] ss:text-[25px] font-medium text-white mb-2 ss:mb-0">{project.title}</h2>
-                                        <p className="text-white/80 text-[16px] ss:text-[15px]">{project.description}</p>
+                                        {/* <p className="text-white/80 text-[16px] ss:text-[15px]">{project.description}</p> */}
                                     </div>
 
                                     {/* Tech Stack Icons */}

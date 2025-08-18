@@ -83,7 +83,7 @@ export default function Connect({ isOpen, setIsOpen }) {
                 >
                     {/* Modal Content */}
                     <div
-                        className={`bg-[#121212] border border-[#323232] border-b-0 rounded-t-2xl p-10 max-w-[550px] w-full relative transform transition-all duration-300 ${isClosing ? 'scale-95 opacity-0' : 'scale-100 opacity-100'
+                        className={`bg-[#121212] border border-[#323232] border-b-0 rounded-t-2xl p-10 max-w-[560px] w-full relative transform transition-all duration-300 ${isClosing ? 'scale-95 opacity-0' : 'scale-100 opacity-100'
                             }`}
                         onClick={(e) => e.stopPropagation()}
                     >
@@ -132,7 +132,7 @@ export default function Connect({ isOpen, setIsOpen }) {
                                 <div className='flex flex-col gap-6'>
                                     <div className="grid grid-cols-2 gap-4 ss:grid-cols-1">
                                         {/* Email Option */}
-                                        <a href='mailto:ayush.printila@gmail.com' className="border border-[#323232] rounded-lg hover:bg-gray-750 transition-colors duration-200 cursor-pointer group">
+                                        <a href='mailto:ayushagrahari0511@protonmail.com' className="border border-[#323232] rounded-lg hover:bg-gray-750 transition-colors duration-200 cursor-pointer group">
                                             <div className="flex items-center gap-3 mb-2 p-[15px] border-b border-b-[#323232] bg-gradient-to-r from-blue-900/20 to-transparent">
                                                 <div className="w-10 h-10 rounded-lg flex items-center justify-center">
                                                     <Mail size={20} className="text-blue-400" />
@@ -141,7 +141,7 @@ export default function Connect({ isOpen, setIsOpen }) {
                                             </div>
 
                                             <div className='flex flex-col p-[15px]'>
-                                                <div className="text-lg text-white font-bold mb-1">ayush.printila@gmail.com</div>
+                                                <div className="text-lg text-white font-bold mb-1">ayushagrahari0511@protonmail.com</div>
                                                 <div className="text-lg text-gray-500">Send me an email directly</div>
                                             </div>
 

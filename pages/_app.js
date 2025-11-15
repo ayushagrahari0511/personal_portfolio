@@ -5,11 +5,11 @@ import * as gtag from '../lib/gtag';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { Theme } from "@radix-ui/themes";
-import Clarity from '@microsoft/clarity';
+// import Clarity from '@microsoft/clarity';
 
 const projectId = "u6f0gmkq07"
 
-Clarity.init(projectId);
+// Clarity.init(projectId);
 
 function MyApp({ Component, pageProps }) {
 
@@ -28,6 +28,17 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
+      <Script
+        id="clarity-script"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `(function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r); t.async=1; t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "${projectId}");`
+        }}
+      />
       <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}

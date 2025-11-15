@@ -5,6 +5,11 @@ import * as gtag from '../lib/gtag';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { Theme } from "@radix-ui/themes";
+import Clarity from '@microsoft/clarity';
+
+const projectId = "u6f0gmkq07"
+
+Clarity.init(projectId);
 
 function MyApp({ Component, pageProps }) {
 

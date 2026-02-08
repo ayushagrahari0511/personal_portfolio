@@ -13,9 +13,12 @@ module.exports = {
         dimWhite: "rgba(255, 255, 255, 0.7)",
         dimBlue: "rgba(9, 151, 124, 0.1)",
         grey: '#1E1E1E',
+        lightBg: '#F5F5F5',
+        darkText: '#1A1A1A',
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
+        cabinet: ["Cabinet Grotesk", "sans-serif"],
         kaushan: ['Kaushan Script'],
         lobster: ["Lobster", "cursive"],
       },

@@ -11,6 +11,7 @@ import Project2 from '../components/Project2'
 import { useState } from 'react'
 import Connect from '../components/Connect'
 import CustomCursor from '../components/CustomCursor'
+import ScrollMarqueeBanner from '../components/ScrollMarqueeBanner'
 
 export default function Home() {
 
@@ -28,11 +29,13 @@ export default function Home() {
       <CustomCursor />
 
       <main>
-        {/* Hero Section with Light Theme */}
-        <div className='bg-lightBg'>
+        {/* Hero Section with Light Theme - z-0 so banner can overlap on top when parallax scrolls */}
+        <div className='relative z-0 bg-lightBg'>
           <Header />
           <Hero setIsOpen={setIsOpen} />
         </div>
+
+        <ScrollMarqueeBanner />
 
         {/* Rest of the sections with dark theme */}
         <div className='bg-primary text-[#fff] font-poppins'>

@@ -29,6 +29,14 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Lenis smooth scroll - prevent conflict when Lenis is active */
+html.lenis, html.lenis body {
+    height: auto;
+}
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
 html::-webkit-scrollbar {
     width: .5rem;
 }

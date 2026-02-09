@@ -5,6 +5,7 @@ import * as gtag from '../lib/gtag';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { Theme } from "@radix-ui/themes";
+import SmoothScroll from '../components/SmoothScroll';
 // import Clarity from '@microsoft/clarity';
 
 const projectId = "u6f0gmkq07"
@@ -53,8 +54,9 @@ function MyApp({ Component, pageProps }) {
         gtag('config', '${gtag.GA_TRACKING_ID}');
       `}</Script>
       <Theme>
-
-        <Component {...pageProps} />
+        <SmoothScroll>
+          <Component {...pageProps} />
+        </SmoothScroll>
       </Theme>
     </>
   )

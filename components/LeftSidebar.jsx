@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import { gsap } from 'gsap'
 
 const LeftSidebar = () => {
+    const iconRefs = useRef([])
+
     const socialLinks = [
         {
             name: 'LinkedIn',
@@ -31,6 +34,41 @@ const LeftSidebar = () => {
         }
     ]
 
+    const handleIconMouseMove = (e, index) => {
+        const icon = iconRefs.current[index]
+        if (!icon) return
+
+        const iconRect = icon.getBoundingClientRect()
+        const iconCenterX = iconRect.left + iconRect.width / 2
+        const iconCenterY = iconRect.top + iconRect.height / 2
+
+        const offsetX = e.clientX - iconCenterX
+        const offsetY = e.clientY - iconCenterY
+
+        const maxOffset = 12
+        const clampedX = Math.max(-maxOffset, Math.min(maxOffset, offsetX * 0.25))
+        const clampedY = Math.max(-maxOffset, Math.min(maxOffset, offsetY * 0.25))
+
+        gsap.to(icon, {
+            x: clampedX,
+            y: clampedY,
+            duration: 0.3,
+            ease: 'power2.out'
+        })
+    }
+
+    const handleIconMouseLeave = (index) => {
+        const icon = iconRefs.current[index]
+        if (!icon) return
+
+        gsap.to(icon, {
+            x: 0,
+            y: 0,
+            duration: 0.5,
+            ease: 'elastic.out(1, 0.3)'
+        })
+    }
+
     return (
         <aside className="absolute left-8 top-[15%] flex flex-col items-center z-40 sm:hidden">
             {/* Vertical line with dots */}
@@ -47,14 +85,17 @@ const LeftSidebar = () => {
             
             {/* Social icons below the line */}
             <div className="flex flex-col gap-8 items-center mt-14">
-                {socialLinks.map((link) => (
+                {socialLinks.map((link, index) => (
                     <a
                         key={link.name}
+                        ref={(el) => (iconRefs.current[index] = el)}
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-darkText opacity-100 hover:opacity-100 hover:scale-125 transition-all duration-300 social-icon"
+                        className="text-darkText opacity-100 hover:opacity-100 transition-opacity duration-300 social-icon"
                         aria-label={link.name}
+                        onMouseMove={(e) => handleIconMouseMove(e, index)}
+                        onMouseLeave={() => handleIconMouseLeave(index)}
                     >
                         {link.icon}
                     </a>

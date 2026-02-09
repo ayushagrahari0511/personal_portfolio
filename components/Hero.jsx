@@ -169,7 +169,7 @@ const Hero = ({ setIsOpen }) => {
                         ref={roleRef}
                         className="text-darkText text-center font-cabinet font-bold text-[10rem] xl:text-[8rem] lg:text-[6.5rem] md:text-[5rem] sm:text-[3.8rem] ss:text-[2.8rem] leading-[1.1] opacity-0 hero-role"
                     >
-                        Creative dev.
+                        Product dev.
                     </h2>
                    
                 </div>

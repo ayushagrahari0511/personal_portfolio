@@ -12,6 +12,7 @@ import { useState } from 'react'
 import Connect from '../components/Connect'
 import CustomCursor from '../components/CustomCursor'
 import ScrollMarqueeBanner from '../components/ScrollMarqueeBanner'
+import AboutParallaxSection from '../components/AboutParallaxSection'
 
 export default function Home() {
 
@@ -36,6 +37,7 @@ export default function Home() {
         </div>
 
         <ScrollMarqueeBanner />
+        <AboutParallaxSection />
 
         {/* Rest of the sections with dark theme */}
         <div className='bg-primary text-[#fff] font-poppins'>

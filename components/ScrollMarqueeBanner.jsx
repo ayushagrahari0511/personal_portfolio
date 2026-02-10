@@ -9,7 +9,7 @@ if (typeof window !== 'undefined') {
 const TEXT = 'PRODUCT-FOCUSED DEVELOPER '
 const COPY_COUNT = 4
 
-const SPEED_FACTOR = .8
+const SPEED_FACTOR = .6
 
 export default function ScrollMarqueeBanner() {
   const wrapperRef = useRef(null)

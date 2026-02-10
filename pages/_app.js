@@ -1,4 +1,5 @@
 import "@radix-ui/themes/styles.css";
+import 'locomotive-scroll/dist/locomotive-scroll.css';
 import '../styles/globals.css'
 import Script from 'next/script';
 import * as gtag from '../lib/gtag';

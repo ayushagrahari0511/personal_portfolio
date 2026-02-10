@@ -97,18 +97,7 @@ const Hero = ({ setIsOpen }) => {
                 delay: 0.5
             })
 
-            // Parallax effect for decorative circles on scroll
-            gsap.utils.toArray('.circle-float, .circle-float-delayed').forEach((circle) => {
-                gsap.to(circle, {
-                    y: '100px',
-                    scrollTrigger: {
-                        trigger: heroRef.current,
-                        start: 'top top',
-                        end: 'bottom top',
-                        scrub: 1
-                    }
-                })
-            })
+            // Parallax for circles: Locomotive data-scroll-speed
 
             // Hide scroll indicator when scrolling past hero
             ScrollTrigger.create({
@@ -139,6 +128,9 @@ const Hero = ({ setIsOpen }) => {
         <section 
             id="hero"
             ref={heroRef}
+           data-scroll
+            data-scroll-speed="-.6"
+            data-scroll-enable-touch-speed="-.6"
             className="relative flex flex-col justify-center items-center min-h-[80vh] w-full overflow-hidden bg-lightBg"
         >
             {/* Left Sidebar */}

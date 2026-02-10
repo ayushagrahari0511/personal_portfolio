@@ -29,9 +29,16 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Lenis smooth scroll - prevent conflict when Lenis is active */
+/* html, body {
+    overflow: hidden;
+} */
+
+/* Locomotive Scroll (uses Lenis) - smooth scroll compatibility */
 html.lenis, html.lenis body {
     height: auto;
+}
+html.lenis {
+    overflow-x: hidden;
 }
 .lenis.lenis-smooth {
     scroll-behavior: auto !important;
@@ -100,6 +107,18 @@ button, a {
 .bg-lightBg::-webkit-scrollbar-thumb {
     background: #404040;
 }
+
+/* Locomotive data-scroll reveal items */
+.reveal-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal-item.is-inview {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 /* Ensure hero section takes full viewport */
 #hero {

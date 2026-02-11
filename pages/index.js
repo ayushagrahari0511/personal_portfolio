@@ -40,12 +40,9 @@ export default function Home() {
         <ScrollMarqueeBanner />
         <AboutParallaxSection />
         <SkillsShowcase />
-            <Skills />
 
         {/* Rest of the sections with dark theme */}
-        <div className='bg-primary text-[#fff] font-poppins'>
-          <div id='about'>
-          </div>
+        <div className='bg-primary text-[#fff] font-poppins relative z-[100]'>
           <div id='works'>
             <Projects />
           </div>

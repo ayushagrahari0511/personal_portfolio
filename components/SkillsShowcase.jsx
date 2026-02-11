@@ -66,7 +66,7 @@ export default function SkillsShowcase() {
       data-scroll-section
       data-scroll
       data-scroll-speed='-.9'
-      data-scroll-enable-touch-speed='-.9'
+      // data-scroll-enable-touch-speed='-.9'
       className="w-full py-16 relative z-10 md:py-20"
       onMouseMove={handleSectionMouseMove}
       onMouseLeave={handleSectionMouseLeave}

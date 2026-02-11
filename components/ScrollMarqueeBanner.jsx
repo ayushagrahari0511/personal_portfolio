@@ -57,7 +57,7 @@ export default function ScrollMarqueeBanner() {
       <section
         ref={sectionRef}
 
-        className="relative w-full overflow-hidden bg-primary py-8 sm:py-[40px] lg:py-[80px] xl:py-[100px] rounded-tl-2xl rounded-tr-2xl sm:rounded-tl-[15px] sm:rounded-tr-[15px] md:rounded-tl-3xl md:rounded-tr-3xl"
+        className="relative w-full overflow-hidden bg-primary py-8 sm:py-[40px] lg:py-[80px] xl:py-[100px] rounded-tl-2xl rounded-tr-2xl sm:rounded-tl-[0px] sm:rounded-tr-[0px] md:rounded-tl-3xl md:rounded-tr-3xl"
       >
         <div className="overflow-hidden">
           <div

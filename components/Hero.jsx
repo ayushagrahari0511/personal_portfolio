@@ -50,7 +50,7 @@ const Hero = ({ setIsOpen }) => {
             }, '-=0.7')
 
             // 4. Social sidebar slide from left
-            tl.fromTo('.social-icon', 
+            tl.fromTo('.social-icon',
                 {
                     x: -50,
                     opacity: 0
@@ -125,12 +125,12 @@ const Hero = ({ setIsOpen }) => {
     }, [])
 
     return (
-        <section 
+        <section
             id="hero"
             ref={heroRef}
-           data-scroll
+            data-scroll
             data-scroll-speed="-.6"
-            data-scroll-enable-touch-speed="-.6"
+            // data-scroll-enable-touch-speed="-.6"
             className="relative flex flex-col justify-center items-center min-h-[80vh] w-full overflow-hidden bg-lightBg"
         >
             {/* Left Sidebar */}
@@ -142,7 +142,7 @@ const Hero = ({ setIsOpen }) => {
             {/* Main Content */}
             <div className="relative z-10 flex flex-col items-center w-full px-4">
                 {/* Small intro text */}
-                <div 
+                <div
                     ref={titleRef}
                     className="text-darkText text-center font-cabinet text-3xl md:text-2xl ss:text-xl font-normal mb-12 opacity-0 hero-title"
                 >
@@ -151,19 +151,19 @@ const Hero = ({ setIsOpen }) => {
 
                 {/* Main headline */}
                 <div className="flex flex-col items-center gap-2">
-                    <h1 
+                    <h1
                         ref={subtitleRef}
                         className="text-darkText text-center font-cabinet font-bold text-[10rem] xl:text-[8rem] lg:text-[6.5rem] md:text-[5rem] sm:text-[3.8rem] ss:text-[2.8rem] leading-[1.1] opacity-0 hero-subtitle"
                     >
                         Full-stack Developer
                     </h1>
-                    <h2 
+                    <h2
                         ref={roleRef}
                         className="text-darkText text-center font-cabinet font-bold text-[10rem] xl:text-[8rem] lg:text-[6.5rem] md:text-[5rem] sm:text-[3.8rem] ss:text-[2.8rem] leading-[1.1] opacity-0 hero-role"
                     >
                         Product dev.
                     </h2>
-                   
+
                 </div>
             </div>
 

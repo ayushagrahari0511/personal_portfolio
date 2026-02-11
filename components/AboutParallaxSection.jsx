@@ -74,8 +74,8 @@ export default function AboutParallaxSection() {
         data-scroll
         data-scroll-offset="-250%"
         data-scroll-speed=".9"
-        data-scroll-enable-touch-speed=".9"
-        className="relative w-full overflow-hidden bg-[#0f2222] shadow-2xl rounded-tl-2xl rounded-tr-2xl sm:rounded-tl-[15px] sm:rounded-tr-[15px] md:rounded-tl-3xl md:rounded-tr-3xl"
+        // data-scroll-enable-touch-speed=".9"
+        className="relative w-full overflow-hidden bg-[#0f2222] shadow-2xl rounded-tl-2xl rounded-tr-2xl sm:rounded-tl-[0px] sm:rounded-tr-[0px] md:rounded-tl-3xl md:rounded-tr-3xl"
       >
         {/* Main content */}
         <div ref={contentRef} className="relative px-6 py-12 sm:px-10 sm:py-16 lg:px-20 lg:py-24 xl:px-24 xl:py-28">
@@ -114,7 +114,7 @@ export default function AboutParallaxSection() {
           {/* Center line with circles - hidden on mobile */}
           <div className="">
             <h2 className="text-[#DADADA] text-left font-cabinet font-extrabold text-3xl sm:text-6xl lg:text-8xl xl:text-8xl leading-tight">
-              What <br/> I deliver
+              What <br /> I deliver
             </h2>
           </div>
           <div className="lg:flex flex-col pointer-events-none py-12 lg:py-24 sm:py-6">

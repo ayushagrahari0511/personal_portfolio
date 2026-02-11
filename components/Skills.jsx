@@ -6,7 +6,7 @@ import Icon from './Icon'
 
 const Skills = () => {
     return (
-        <div className='w-full'>
+        <div className='w-full relative z-[100]'>
             <div className='w-[75%] flex flex-col justify-center items-center min-h-[90vh]
              m-auto md:w-[85%] xs:w-[95%]' >
                 <div className='space-y-4 flex flex-col items-center'>

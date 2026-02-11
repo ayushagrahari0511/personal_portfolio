@@ -3,6 +3,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
+import SkillsShowcase from '../components/SkillsShowcase'
 import Skills from '../components/Skills'
 import Projects from '../components/Projects'
 import Footer from '../components/Footer'
@@ -38,11 +39,12 @@ export default function Home() {
 
         <ScrollMarqueeBanner />
         <AboutParallaxSection />
+        <SkillsShowcase />
+            <Skills />
 
         {/* Rest of the sections with dark theme */}
         <div className='bg-primary text-[#fff] font-poppins'>
           <div id='about'>
-            <Skills />
           </div>
           <div id='works'>
             <Projects />

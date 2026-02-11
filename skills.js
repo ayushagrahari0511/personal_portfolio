@@ -90,3 +90,17 @@ export const skills = [
         name: "AWS"
     }
 ]
+
+// Curated subset for SkillsShowcase: only these titles are shown (order preserved)
+export const showcaseSkillTitles = [
+    "html",
+    "react",
+    "next",
+    "tailwind",
+    "nodejs",
+    "typescript",
+    "javascript",
+    "git",
+    "mongodb",
+    "docker",
+]

@@ -36,7 +36,7 @@ export default function AboutParallaxSection() {
       {
         scrollTrigger: {
           trigger: lineRef.current,
-          start: 'top 100%',
+          start: 'top 120%',
           end: 'bottom 50%',
         }
       }
@@ -73,8 +73,8 @@ export default function AboutParallaxSection() {
         data-scroll-section
         data-scroll
         data-scroll-offset="-250%"
-        data-scroll-speed=".8"
-        data-scroll-enable-touch-speed=".8"
+        data-scroll-speed=".9"
+        data-scroll-enable-touch-speed=".9"
         className="relative w-full overflow-hidden bg-[#0f2222] rounded-tl-2xl rounded-tr-2xl sm:rounded-tl-[15px] sm:rounded-tr-[15px] md:rounded-tl-3xl md:rounded-tr-3xl"
       >
         {/* Main content */}

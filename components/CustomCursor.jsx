@@ -25,7 +25,7 @@ const CustomCursor = () => {
             gsap.to(cursor, {
                 x: e.clientX,
                 y: e.clientY,
-                duration: 0.5,
+                duration: 0.8,
                 ease: 'power3.out'
             })
 
@@ -34,7 +34,7 @@ const CustomCursor = () => {
                 gsap.to(cursorRing, {
                     x: e.clientX,
                     y: e.clientY,
-                    duration: 0.7,
+                    duration: 0.8,
                     ease: 'power3.out'
                 })
             }
@@ -44,7 +44,7 @@ const CustomCursor = () => {
         const handleMouseOver = (e) => {
             const target = e.target
             const isInteractive = target.matches('a, button, input, textarea, [role="button"]') ||
-                                 target.closest('a, button, input, textarea, [role="button"]')
+                target.closest('a, button, input, textarea, [role="button"]')
 
             if (isInteractive) {
                 gsap.to(cursor, {
@@ -65,7 +65,7 @@ const CustomCursor = () => {
         const handleMouseOut = (e) => {
             const target = e.target
             const isInteractive = target.matches('a, button, input, textarea, [role="button"]') ||
-                                 target.closest('a, button, input, textarea, [role="button"]')
+                target.closest('a, button, input, textarea, [role="button"]')
 
             if (isInteractive) {
                 gsap.to(cursor, {

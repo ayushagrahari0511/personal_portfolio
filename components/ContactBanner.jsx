@@ -74,10 +74,11 @@ const ContactBanner = ({ setConnectOpen }) => {
                     ref={revealText}
                     className="text-[8vw] sm:text-[12vw] leading-none font-cabinet font-bold text-white uppercase tracking-tighter translate-y-10 opacity-0 text-center px-4 py-[120px]"
                 >
-                    Let's Talk
+                    Let&apos;s Talk
                 </h2>
             </div>
         </div>
+        
     );
 };
 

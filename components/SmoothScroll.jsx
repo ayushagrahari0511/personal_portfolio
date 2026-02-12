@@ -28,9 +28,9 @@ export default function SmoothScroll({ children }) {
           duration: 1.2,
           easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
           smoothWheel: true,
-          smoothTouch: true,
+          // smoothTouch: true,
           // Enable touch scroll sync so mobile/touch scrolling updates Lenis and ScrollTrigger
-          syncTouch: true,
+          // syncTouch: true,
           // syncTouchLerp: 0.075,
           // touchMultiplier: 2,
         },

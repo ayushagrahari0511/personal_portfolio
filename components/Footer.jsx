@@ -18,8 +18,8 @@ const Footer = ({ setConnectOpen }) => {
 
     const socialLinks = [
         { name: 'LinkedIn', url: 'https://www.linkedin.com/in/ayushagrahari0511/' },
-        { name: 'GitHub', url: 'https://github.com/ayushagrahari0511' },
-        { name: 'X', url: 'https://x.com/ayush_dev0511' },
+        { name: 'Instagram', url: 'https://instagram.com/tvareet' },
+        { name: 'X', url: 'https://x.com/tvareet' },
     ];
 
     const navLinks = [

@@ -14,10 +14,11 @@ import Connect from '../components/Connect'
 import CustomCursor from '../components/CustomCursor'
 import ScrollMarqueeBanner from '../components/ScrollMarqueeBanner'
 import AboutParallaxSection from '../components/AboutParallaxSection'
+import ContactBanner from '../components/ContactBanner'
 
 export default function Home() {
 
-  const [open, setIsOpen] = useState();
+  const [connectOpen, setConnectOpen] = useState(false);
   return (
     <div>
       <Head>
@@ -33,8 +34,8 @@ export default function Home() {
       <main>
         {/* Hero Section with Light Theme - z-0 so banner can overlap on top when parallax scrolls */}
         <div className='relative z-0 bg-lightBg'>
-          <Header />
-          <Hero setIsOpen={setIsOpen} />
+          <Header setConnectOpen={setConnectOpen} />
+          <Hero setIsOpen={setConnectOpen} />
         </div>
 
         <ScrollMarqueeBanner />
@@ -46,11 +47,14 @@ export default function Home() {
           <div id='works'>
             <Projects />
           </div>
+
+          <ContactBanner setConnectOpen={setConnectOpen} />
+
           <div id='contact'>
-            <Footer />
+            <Footer setConnectOpen={setConnectOpen} />
           </div>
 
-          <Connect isOpen={open} setIsOpen={setIsOpen} />
+          <Connect isOpen={connectOpen} setIsOpen={setConnectOpen} />
         </div>
       </main>
     </div>

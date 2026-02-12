@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { X, Mail, Phone, Linkedin, Github, Twitter, Send } from 'lucide-react';
 import axios from 'axios';
 import { Spinner } from '@radix-ui/themes';
+import { gsap } from 'gsap';
 
 export default function Connect({ isOpen, setIsOpen }) {
     const [isClosing, setIsClosing] = useState(false);
+    const overlayRef = useRef(null);
+    const contentRef = useRef(null);
     const [showForm, setShowForm] = useState(false);
     const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
@@ -20,11 +23,31 @@ export default function Connect({ isOpen, setIsOpen }) {
 
     const closeModal = () => {
         setIsClosing(true);
-        setTimeout(() => {
-            setIsOpen(false);
-            setIsClosing(false);
-            setShowForm(false);
-        }, 300);
+        if (!contentRef.current || !overlayRef.current) {
+            setTimeout(() => {
+                setIsOpen(false);
+                setIsClosing(false);
+                setShowForm(false);
+            }, 300);
+            return;
+        }
+        gsap.timeline({
+            onComplete: () => {
+                setIsOpen(false);
+                setIsClosing(false);
+                setShowForm(false);
+            },
+        })
+            .to(contentRef.current, {
+                y: '100%',
+                duration: 0.4,
+                ease: 'power3.in',
+            }, 0)
+            .to(overlayRef.current, {
+                opacity: 0,
+                duration: 0.3,
+                ease: 'power2.out',
+            }, 0);
     };
 
     const showContactForm = () => {
@@ -71,20 +94,42 @@ export default function Connect({ isOpen, setIsOpen }) {
         return formData.message.length;
     };
 
-    return (
-        <div className=" bg-gray-900 flex items-center justify-center p-4 ss:p-0">
+    // Animate modal in when opening
+    useEffect(() => {
+        if (!isOpen || !overlayRef.current || !contentRef.current) return;
 
+        if (!isClosing) {
+            gsap.set(overlayRef.current, { opacity: 0 });
+            gsap.set(contentRef.current, { y: '100%' });
+            const tl = gsap.timeline();
+            tl.to(overlayRef.current, {
+                opacity: 1,
+                duration: 0.35,
+                ease: 'power2.out',
+            }, 0);
+            tl.to(contentRef.current, {
+                y: 0,
+                duration: 0.5,
+                ease: 'power3.out',
+            }, 0.1);
+        }
+    }, [isOpen, isClosing]);
+
+    if (!isOpen && !isClosing) return null;
+
+    return (
+        <>
             {/* Modal Overlay */}
             {isOpen && (
                 <div
-                    className={`fixed inset-0 bg-black/30 backdrop-blur-sm flex items-end justify-center  z-50 transition-all duration-300 ${isClosing ? 'opacity-0' : 'opacity-100'
-                        }`}
+                    ref={overlayRef}
+                    className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-end justify-center z-50 opacity-0 overflow-hidden"
                     onClick={closeModal}
                 >
-                    {/* Modal Content */}
+                    {/* Modal Content - slides up from bottom */}
                     <div
-                        className={`bg-[#121212] border border-[#323232] border-b-0 rounded-t-2xl p-10 max-w-[560px] w-full relative transform transition-all duration-300 ${isClosing ? 'scale-95 opacity-0' : 'scale-100 opacity-100'
-                            }`}
+                        ref={contentRef}
+                        className="bg-[#121212] border border-[#323232] border-b-0 rounded-t-2xl p-8 max-w-[560px] w-full relative will-change-transform translate-y-full"
                         onClick={(e) => e.stopPropagation()}
                     >
                         {/* Close Button */}
@@ -97,20 +142,20 @@ export default function Connect({ isOpen, setIsOpen }) {
 
 
                         {/* Social Icons */}
-                        <div className="flex justify-center gap-6 mb-8">
+                        <div className="flex justify-center gap-6 mb-6">
                             <a href="https://www.linkedin.com/in/ayushagrahari0511/" target='_blank' rel="noreferrer" className="text-gray-400 hover:text-white transition-colors duration-200">
                                 <Linkedin size={20} />
                             </a>
                             <a href="https://github.com/ayushagrahari0511" target='_blank' rel="noreferrer" className="text-gray-400 hover:text-white transition-colors duration-200">
                                 <Github size={20} />
                             </a>
-                            <a href="https://x.com/ayush_dev0511" target='_blank' rel="noreferrer" className="text-gray-400 hover:text-white transition-colors duration-200">
+                            <a href="https://x.com/tvareet" target='_blank' rel="noreferrer" className="text-gray-400 hover:text-white transition-colors duration-200">
                                 <Twitter size={20} />
                             </a>
                         </div>
 
                         {/* Quick Connect and Fill Form Buttons - In Row */}
-                        <div className="grid grid-cols-2 gap-4 mb-10 p-[3px] bg-neutral-800/50 rounded-[7px]">
+                        <div className="grid grid-cols-2 gap-4 mb-8 p-[3px] bg-neutral-800/50 rounded-[7px]">
                             <div
                                 onClick={showContactOptions}
                                 className={`text-center cursor-pointer flex items-center justify-center  text-[12px] font-semibold ${!showForm ? 'text-white p-2 bg-[#292929] border border-[#ffffff26] rounded-[8px]' : 'text-[#a1a1a1]'}`}
@@ -126,14 +171,14 @@ export default function Connect({ isOpen, setIsOpen }) {
                         </div>
 
                         {/* Content Area */}
-                        <div className="mb-6">
+                        <div className="mb-3">
                             {!showForm ? (
                                 /* Contact Options */
                                 <div className='flex flex-col gap-6'>
                                     <div className="grid grid-cols-2 gap-4 ss:grid-cols-1">
                                         {/* Email Option */}
-                                        <a href='mailto:ayushagrahari0511@protonmail.com' className="border border-[#323232] rounded-lg hover:bg-gray-750 transition-colors duration-200 cursor-pointer group">
-                                            <div className="flex items-center gap-3 mb-2 p-[15px] border-b border-b-[#323232] bg-gradient-to-r from-blue-900/20 to-transparent">
+                                        <a href='mailto:ayush@tvareet.com' className="border border-[#323232] rounded-lg hover:bg-gray-750 transition-colors duration-200 cursor-pointer group">
+                                            <div className="flex items-center gap-3 mb-2 p-[10px] border-b border-b-[#323232] bg-gradient-to-r from-blue-900/20 to-transparent">
                                                 <div className="w-10 h-10 rounded-lg flex items-center justify-center">
                                                     <Mail size={20} className="text-blue-400" />
                                                 </div>
@@ -141,8 +186,8 @@ export default function Connect({ isOpen, setIsOpen }) {
                                             </div>
 
                                             <div className='flex flex-col p-[15px]'>
-                                                <div className="text-lg text-white font-bold mb-1">ayushagrahari0511@protonmail.com</div>
-                                                <div className="text-lg text-gray-500">Send me an email directly</div>
+                                                <div className="text-md text-white font-bold mb-1">ayush@tvareet.com</div>
+                                                <div className="text-sm text-gray-500">Send me an email directly</div>
                                             </div>
 
                                         </a>
@@ -152,15 +197,15 @@ export default function Connect({ isOpen, setIsOpen }) {
                                             target="_blank"
                                             rel="noreferrer"
                                             className="border border-[#323232] rounded-lg hover:bg-gray-750 transition-colors duration-200 cursor-pointer group">
-                                            <div className="flex items-center gap-3 mb-2 p-[15px] border-b border-b-[#323232] bg-gradient-to-r from-purple-900/20 to-transparent">
+                                            <div className="flex items-center gap-3 mb-2 p-[10px] border-b border-b-[#323232] bg-gradient-to-r from-purple-900/20 to-transparent">
                                                 <div className="w-10 h-10 rounded-lg flex items-center justify-center">
                                                     <Phone size={20} className="text-purple-400" />
                                                 </div>
                                                 <span className="text-white font-medium">Phone</span>
                                             </div>
                                             <div className='flex flex-col p-[15px]'>
-                                                <div className="text-lg text-white font-bold mb-1">+91 7800947067</div>
-                                                <div className="text-lg text-gray-500">Call or WhatsApp me directly</div>
+                                                <div className="text-md text-white font-bold mb-1">+91 7800947067</div>
+                                                <div className="text-sm text-gray-500">Call or WhatsApp me directly</div>
                                             </div>
                                         </a>
                                     </div>
@@ -262,6 +307,6 @@ export default function Connect({ isOpen, setIsOpen }) {
                     </div>
                 </div>
             )}
-        </div>
+        </>
     );
 }

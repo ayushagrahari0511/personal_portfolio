@@ -36,7 +36,7 @@ export default function AboutParallaxSection() {
       {
         scrollTrigger: {
           trigger: lineRef.current,
-          start: 'top 120%',
+          start: 'top 110%',
           end: 'bottom 50%',
         }
       }

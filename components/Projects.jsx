@@ -73,7 +73,7 @@ const Projects = () => {
     }
 
     return (isSSR &&
-        <div ref={container} className="w-full min-h-screen py-20 px-4 sm:px-2 sm:py-10 flex flex-col items-center gap-20 bg-black">
+        <div ref={container} className="w-full min-h-screen py-20 px-4 sm:px-2 sm:py-10 flex flex-col items-center gap-20">
             <div className="w-full flex flex-col items-center">
                 {projects.map((project, index) => (
                     <div

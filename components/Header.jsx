@@ -3,7 +3,7 @@ import Link from 'next/link'
 import WaveText from './WaveText'
 import { gsap } from 'gsap'
 
-const Header = () => {
+const Header = ({ setConnectOpen }) => {
     const contactButtonRef = useRef(null)
     const [isHovered, setIsHovered] = useState(false)
     const [buttonTransform, setButtonTransform] = useState({ x: 0, y: 0 })
@@ -91,7 +91,7 @@ const Header = () => {
                     {/* Contact Button with Sliding Background and Cursor Follow */}
                     <button 
                         ref={contactButtonRef}
-                        onClick={() => scrollToSection('contact')}
+                        onClick={() => (setConnectOpen ? setConnectOpen(true) : scrollToSection('contact'))}
                         onMouseMove={handleButtonMouseMove}
                         onMouseEnter={handleButtonMouseEnter}
                         onMouseLeave={handleButtonMouseLeave}

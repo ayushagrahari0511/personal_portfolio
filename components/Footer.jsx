@@ -167,11 +167,12 @@ const Footer = ({ setConnectOpen }) => {
                                     onClick={() => setConnectOpen(true)}
                                     className="text-[4.5rem] sm:text-[2.5rem] font-medium flex items-center gap-4 cursor-pointer hover:opacity-80 transition-opacity bg-transparent border-none text-inherit font-inherit p-0"
                                 >
-                                    Let's Talk <span className="transform -rotate-45 block">→</span>
+                                    Let&apos;s Talk <span className="transform -rotate-45 block">→</span>
                                 </button>
                             ) : (
+                                
                                 <a href="mailto:ayush@tvareet.com" className="text-[4.5rem] sm:text-[2.5rem] font-medium flex items-center gap-4 cursor-pointer hover:opacity-80 transition-opacity">
-                                    Let's Talk <span className="transform -rotate-45 block">→</span>
+                                    Let&apos;s Talk <span className="transform -rotate-45 block">→</span>
                                 </a>
                             )}
                         </div>

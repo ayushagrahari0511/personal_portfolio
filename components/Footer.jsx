@@ -23,8 +23,9 @@ const Footer = ({ setConnectOpen }) => {
     ];
 
     const navLinks = [
-        { name: 'Contact', href: '#contact', openConnect: true },
-        { name: 'Projects', href: '#works' },
+        { name: 'Contact', href: '/#contact', openConnect: true },
+        { name: 'Projects', href: '/#works' },
+        { name: 'Videos', href: '/video-portfolio' },
     ];
 
     // Magnetic Effect Logic

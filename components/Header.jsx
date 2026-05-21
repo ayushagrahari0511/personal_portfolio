@@ -1,14 +1,25 @@
 import React, { useRef, useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import WaveText from './WaveText'
 import { gsap } from 'gsap'
 
 const Header = ({ setConnectOpen }) => {
+    const router = useRouter()
+    const isHome = router.pathname === '/'
     const contactButtonRef = useRef(null)
     const [isHovered, setIsHovered] = useState(false)
     const [buttonTransform, setButtonTransform] = useState({ x: 0, y: 0 })
 
     const scrollToSection = (sectionId) => {
+        if (!isHome) {
+            if (sectionId === 'home') {
+                router.push('/')
+                return
+            }
+            router.push(`/#${sectionId}`)
+            return
+        }
         if (sectionId === 'home') {
             window.scrollTo({ top: 0, behavior: 'smooth' })
             return
@@ -60,9 +71,9 @@ const Header = ({ setConnectOpen }) => {
         <header className="relative w-full px-8 py-6 md:px-6 ss:px-4 bg-lightBg z-50">
             <div className="max-w-[1400px] mx-auto flex items-center justify-between">
                 {/* Logo */}
-                <div className="text-darkText font-cabinet font-bold text-3xl md:text-2xl ss:text-xl cursor-pointer hover:opacity-70 transition-opacity">
+                <Link href="/" className="text-darkText font-cabinet font-bold text-3xl md:text-2xl ss:text-xl cursor-pointer hover:opacity-70 transition-opacity">
                     A
-                </div>
+                </Link>
 
                 {/* Right side: Navigation Links + Contact Button */}
                 <div className="flex items-center gap-8 md:gap-6">

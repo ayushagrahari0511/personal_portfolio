@@ -14,7 +14,17 @@ if (typeof window !== 'undefined') {
  */
 export default function SmoothScroll({ children }) {
   const containerRef = useRef(null)
+  const locoScrollRef = useRef(null)
   const router = useRouter()
+
+  const scrollToTop = () => {
+    if (locoScrollRef.current?.lenisInstance) {
+      locoScrollRef.current.scrollTo(0, { immediate: true })
+    } else {
+      window.scrollTo(0, 0)
+    }
+    ScrollTrigger.refresh()
+  }
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -73,6 +83,8 @@ export default function SmoothScroll({ children }) {
       }
       window.addEventListener('resize', handleResize)
       resizeCleanup = () => window.removeEventListener('resize', handleResize)
+
+      locoScrollRef.current = locoScroll
     }
 
     init()
@@ -80,13 +92,26 @@ export default function SmoothScroll({ children }) {
     return () => {
       resizeCleanup?.()
       locoScroll?.destroy?.()
+      locoScrollRef.current = null
     }
   }, [])
 
-  // Refresh on route change (Next.js client navigation)
+  // Scroll to top (or hash target) on route change
   useEffect(() => {
-    const handleRouteChange = () => {
-      ScrollTrigger.refresh()
+    const handleRouteChange = (url) => {
+      const hash = url.split('#')[1]
+      if (hash) {
+        requestAnimationFrame(() => {
+          const el = document.getElementById(hash)
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' })
+            return
+          }
+          scrollToTop()
+        })
+        return
+      }
+      scrollToTop()
     }
     router.events.on('routeChangeComplete', handleRouteChange)
     return () => router.events.off('routeChangeComplete', handleRouteChange)

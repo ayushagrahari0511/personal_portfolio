@@ -4,23 +4,26 @@ import '../styles/globals.css'
 import Script from 'next/script';
 import * as gtag from '../lib/gtag';
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Theme } from "@radix-ui/themes";
 import SmoothScroll from '../components/SmoothScroll';
-// import Clarity from '@microsoft/clarity';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Connect from '../components/Connect';
+import CustomCursor from '../components/CustomCursor';
 
 const projectId = "u6f0gmkq07"
 
-// Clarity.init(projectId);
-
 function MyApp({ Component, pageProps }) {
-
+  const [connectOpen, setConnectOpen] = useState(false);
   const router = useRouter();
 
-  // Send page view on route change
   useEffect(() => {
     const handleRouteChange = (url) => {
       gtag.pageview(url);
+      if (typeof window !== 'undefined') {
+        window.scrollTo(0, 0);
+      }
     };
     router.events.on('routeChangeComplete', handleRouteChange);
     return () => {
@@ -56,7 +59,13 @@ function MyApp({ Component, pageProps }) {
       `}</Script>
       <Theme>
         <SmoothScroll>
-          <Component {...pageProps} />
+          <CustomCursor />
+          <Header setConnectOpen={setConnectOpen} />
+          <Component {...pageProps} setConnectOpen={setConnectOpen} connectOpen={connectOpen} />
+          <div id="contact">
+            <Footer setConnectOpen={setConnectOpen} />
+          </div>
+          <Connect isOpen={connectOpen} setIsOpen={setConnectOpen} />
         </SmoothScroll>
       </Theme>
     </>
